@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+
+        String transf = inp.nextLine();
+        int numH = 0;
+        int numV = 0;
+
+        char[] transformations = transf.toCharArray();
+        
+        for (int i=0; i<transformations.length;i++){
+            if (transformations[i] == 'H'){
+                numH+=1;
+            }
+            if (transformations[i] == 'V'){
+                numV+=1;
+            }
+        }
+        numH = numH%2;
+        numV = numV%2;
+        if (numH == 0 &&  numV ==0){
+            System.out.println("1 2"+ "\n" + "3 4");
+
+        }
+        else if (numH != 0 &&  numV !=0){
+            System.out.println("4 3"+ "\n" + "2 1");
+
+        }
+
+        else if (numH == numV){
+            System.out.println("4 3"+ "\n" + "2 1");
+        }
+        else if (numH < numV){
+            System.out.println("2 1"+ "\n" + "4 3");
+        }
+        else if (numV < numH){
+            System.out.println("3 4"+ "\n" + "1 2");
+        }
+
+    }
+}
